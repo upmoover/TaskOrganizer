@@ -1,0 +1,11 @@
+.container {
+  border-radius: 5px;
+  text-align: center;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  flex-shrink: inherit;
+  margin-top: 25px;
+}

@@ -1,0 +1,16 @@
+.example-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-dialog-title {
+  text-align: center;
+}
+
+/*
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+*/

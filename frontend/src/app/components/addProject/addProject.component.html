@@ -1,0 +1,22 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <h1 mat-dialog-title>Новый проект</h1>
+  <mat-form-field appearance="legacy">
+    <mat-label>Имя</mat-label>
+    <input matInput type="text" id="project_name">
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Описание</mat-label>
+    <input matInput type="text" id="project_description">
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Комментарий</mat-label>
+    <input matInput type="text" id="project_comment">
+  </mat-form-field>
+
+  <div mat-dialog-actions class="example-button-container">
+    <button type="submit" mat-button>Создать</button>
+  </div>
+</form>

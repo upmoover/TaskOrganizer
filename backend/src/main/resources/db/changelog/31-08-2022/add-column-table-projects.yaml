@@ -3,34 +3,13 @@ databaseChangeLog:
       id: 1
       author: upmoover
       changes:
-        - createTable:
+        - addColumn:
             tableName: projects
             remarks: Проекты
             columns:
               - column:
-                  name: id
-                  type: bigint
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    primaryKeyName: projects_pk
-                    nullable: false
-              - column:
-                  name: name
-                  type: varchar(50)
-                  remarks: Имя проекта
-                  constraints:
-                    unique: true
-                    uniqueConstraintName: projects_name_uq
-                    nullable: false
-              - column:
-                  name: description
-                  remarks: Описание
-                  type: varchar(50)
-                  constraints:
-                    nullable: false
-              - column:
                   name: comment
                   type: varchar(50)
+                  remarks: Комментарий
                   constraints:
                     nullable: true

@@ -1,22 +1,36 @@
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+<form #frm="ngForm" [formGroup]="form" (ngSubmit)="submit()">
 
   <h1 mat-dialog-title>Новый проект</h1>
   <mat-form-field appearance="legacy">
     <mat-label>Имя</mat-label>
-    <input matInput type="text" id="project_name">
+    <input matInput type="text" formControlName="name" maxlength="50">
   </mat-form-field>
+
+  <p class="mat-error" *ngIf="projectName.errors?.['required']">Заполните имя</p>
+  <p class="mat-error" *ngIf="projectName.errors?.['maxlength']">Имя больше 50 символов</p>
 
   <mat-form-field appearance="legacy">
     <mat-label>Описание</mat-label>
-    <input matInput type="text" id="project_description">
+    <input matInput type="text" formControlName="description" maxlength="50">
   </mat-form-field>
+
+  <p class="mat-error" *ngIf="projectDescription.errors?.['required']">Заполните описание</p>
+  <p class="mat-error" *ngIf="projectDescription.errors?.['maxlength']">Описание больше 50 символов</p>
 
   <mat-form-field appearance="legacy">
     <mat-label>Комментарий</mat-label>
-    <input matInput type="text" id="project_comment">
+    <input matInput type="text" formControlName="comment" maxlength="50">
   </mat-form-field>
+  <p class="mat-error" *ngIf="projectComment.errors?.['maxlength']">Комментарий больше 50 символов</p>
 
   <div mat-dialog-actions class="example-button-container">
-    <button type="submit" mat-button>Создать</button>
+    <button type="submit" mat-button [disabled]="!frm.valid">Создать</button>
   </div>
 </form>
+
+<div class="bg-black/50 fixed top-0 right-0 left-0 bottom-0"></div>
+
+<div
+  class="w-[500px] absolute top-16 p-6 bg-white left-1/2 -translate-x-1/2">
+  <h1 class="text-center mb-2 text-lg"></h1>
+</div>

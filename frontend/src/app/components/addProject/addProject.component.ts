@@ -1,5 +1,7 @@
 import {Component} from "@angular/core";
-import {FormBuilder} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'add-projects',
@@ -7,19 +9,32 @@ import {FormBuilder} from "@angular/forms";
   styleUrls: ['./addProject.component.css']
 })
 
-export class AddProjectComponent{
-  constructor(
-    private formBuilder: FormBuilder,
-  ) {}
-
-  checkoutForm = this.formBuilder.group({
-    project_name: '',
-    project_description: '',
-    project_comment: ''
+export class AddProjectComponent {
+  form = new FormGroup({
+    name: new FormControl<string>('', [Validators.required]),
+    description: new FormControl<string>('', [Validators.required]),
+    comment: new FormControl<string>(''),
   });
 
-  onSubmit(): void {
-    console.log(this.checkoutForm)
+  get projectName() {
+    return this.form.controls.name as FormControl;
   }
-}
 
+  get projectDescription() {
+    return this.form.controls.description as FormControl;
+  }
+
+  get projectComment() {
+    return this.form.controls.comment as FormControl;
+  }
+
+  constructor(private http: HttpClient, private router: Router) {
+  }
+
+  redirectProjects() {
+    this.router.navigate(['/', 'projects']);
+  }
+
+  submit() {
+    this.http.post('/project/create', this.form.value).subscribe(() => this.redirectProjects());
+  }}

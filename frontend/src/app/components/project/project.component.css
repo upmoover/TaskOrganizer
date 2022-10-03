@@ -1,0 +1,21 @@
+.mat-card {
+  margin: 30px;
+  padding: 30px;
+  overflow-wrap: break-word;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.mat-card-subtitle {
+  text-align: center;
+}
+
+.card {
+  max-width: 500px;
+}
+
+.mat-card-content {
+  text-align: center;
+}

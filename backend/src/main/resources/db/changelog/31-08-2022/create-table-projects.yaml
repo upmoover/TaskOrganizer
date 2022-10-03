@@ -25,6 +25,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: description
+                  remarks: Описание
                   type: varchar(50)
                   constraints:
-                    nullable: true
+                    nullable: false

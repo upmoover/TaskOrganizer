@@ -1,4 +1,4 @@
-package ru.upmoover.taskorganizer.requestBodies;
+package ru.upmoover.taskorganizer.requests;
 
 public class Project {
     private String projectName;

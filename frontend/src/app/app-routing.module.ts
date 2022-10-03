@@ -1,19 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ProjectsComponent}  from './projects/projects.component';
-import { TasksComponent} from './index/index.component';
-import { KanbanComponent } from './products/products.component';
-import { HelpComponent } from './products/products.component';
-const routes: Routes = [
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {AddButtonComponent} from './components/addButton/addButton.component';
+import {TasksComponent} from './components/tasks/tasks.component';
+import {KanbanComponent} from './components/kanban/kanban.component';
+import {HelpComponent} from './components/help/help.component';
+import {ProjectsComponent} from "./components/projects/projects.component";
 
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'tasks', component: TasksComponent},
-  { path: 'kanban', component: KanbanComponent },
-  { path: 'help', component: HelpComponent },
+const routes: Routes = [
+  {path: 'projects', component: ProjectsComponent},
+  {path: 'tasks', component: TasksComponent},
+  {path: 'kanban', component: KanbanComponent},
+  {path: 'help', component: HelpComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

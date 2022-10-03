@@ -3,11 +3,11 @@ import {MatDialog} from '@angular/material/dialog';
 import {AddProjectComponent} from "../addProject/addProject.component";
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  selector: 'app-addButton',
+  templateUrl: './addButton.component.html',
+  styleUrls: ['./addButton.component.css']
 })
-export class ProjectsComponent{
+export class AddButtonComponent {
 
   constructor(public dialog: MatDialog) { }
 
